@@ -16,6 +16,11 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         jTextField1.setText("0");
+        jComboBox1.setSelectedIndex(0);
+        jTextField3.setText("0");
+        jTextField4.setText("0");
+        jTextField5.setText("0");
+        jTextField6.setText("0");
     }
 
     /**
@@ -35,6 +40,15 @@ public class Menu extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +79,21 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel3.setText("Valor convertido");
 
+        jButton2.setText("Convertir a todas las divisas");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("  ");
+
+        jLabel5.setText("  ");
+
+        jLabel6.setText("  ");
+
+        jLabel7.setText("  ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,24 +104,50 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(197, 197, 197)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(jLabel3))
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)
+                                .addComponent(jButton1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(56, 56, 56)
+                                        .addComponent(jLabel3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(41, 41, 41)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(66, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton2)
+                                        .addGap(54, 54, 54))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,26 +158,91 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        float num1, usd = 645.16f , eur=765.122f , jpy=5.748f , brl=197.66f ;
+        num1= Float.parseFloat(jTextField1.getText());
+        if (jComboBox1.getSelectedIndex()==0){
+            jLabel4.setText("USD:");
+            jLabel5.setText("EUR:");
+            jLabel6.setText("JPY:");
+            jLabel7.setText("BRL:");
+            jTextField3.setText(String.format("%.2f",num1/usd));
+            jTextField4.setText(String.format("%.2f",num1/eur));
+            jTextField5.setText(String.format("%.2f",num1/jpy));
+            jTextField6.setText(String.format("%.2f",num1/brl));
+            
+        }
+        if (jComboBox1.getSelectedIndex()==1){
+            jLabel4.setText("CLP:");
+            jLabel5.setText("EUR:");
+            jLabel6.setText("JPY:");
+            jLabel7.setText("BRL:");
+            jTextField3.setText(String.format("%.2f",num1*usd));
+            jTextField4.setText(String.format("%.2f",num1*usd/eur));
+            jTextField5.setText(String.format("%.2f",num1*usd/jpy));
+            jTextField6.setText(String.format("%.2f",num1*usd/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==2){
+            jLabel4.setText("USD:");
+            jLabel5.setText("CLP:");
+            jLabel6.setText("JPY:");
+            jLabel7.setText("BRL:");
+            jTextField3.setText(String.format("%.2f",num1*eur/usd));
+            jTextField4.setText(String.format("%.2f",num1*eur));
+            jTextField5.setText(String.format("%.2f",num1*eur/jpy));
+            jTextField6.setText(String.format("%.2f",num1*eur/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==3){
+            jLabel4.setText("USD:");
+            jLabel5.setText("EUR:");
+            jLabel6.setText("CLP:");
+            jLabel7.setText("BRL:");
+            jTextField3.setText(String.format("%.2f",num1*jpy/usd));
+            jTextField4.setText(String.format("%.2f",num1*jpy/eur));
+            jTextField5.setText(String.format("%.2f",num1*jpy));
+            jTextField6.setText(String.format("%.2f",num1*jpy/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==4){
+            jLabel4.setText("USD:");
+            jLabel5.setText("EUR:");
+            jLabel6.setText("JPY:");
+            jLabel7.setText("CLP:");
+            jTextField3.setText(String.format("%.2f",num1*brl/usd));
+            jTextField4.setText(String.format("%.2f",num1*brl/eur));
+            jTextField5.setText(String.format("%.2f",num1*brl/jpy));
+            jTextField6.setText(String.format("%.2f",num1*brl));
+            
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         float num1, usd = 645.16f , eur=765.122f , jpy=5.748f , brl=197.66f ;
-        jTextField1.setText("0");
+        
         /* index 0 = CLP
         * Index 1= USD
         * Index 2 = EUR
@@ -228,6 +348,42 @@ public class Menu extends javax.swing.JFrame {
     // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        float num1, usd = 645.16f , eur=765.122f , jpy=5.748f , brl=197.66f ;
+        
+        num1= Float.parseFloat(jTextField1.getText());
+        if (jComboBox1.getSelectedIndex()==0){//CLP
+            jTextField3.setText(String.format("%.2f",num1/usd));
+            jTextField4.setText(String.format("%.2f",num1/eur));
+            jTextField5.setText(String.format("%.2f",num1/jpy));
+            jTextField6.setText(String.format("%.2f",num1/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==1){//USD
+            jTextField3.setText(String.format("%.2f",num1*usd));
+            jTextField4.setText(String.format("%.2f",num1*usd/eur));
+            jTextField5.setText(String.format("%.2f",num1*usd/jpy));
+            jTextField6.setText(String.format("%.2f",num1*usd/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==2){//EUR
+            jTextField3.setText(String.format("%.2f",num1*eur/usd));
+            jTextField4.setText(String.format("%.2f",num1*eur));
+            jTextField5.setText(String.format("%.2f",num1*eur/jpy));
+            jTextField6.setText(String.format("%.2f",num1*eur/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==3){//JPY
+            jTextField3.setText(String.format("%.2f",num1*jpy/usd));
+            jTextField4.setText(String.format("%.2f",num1*jpy/eur));
+            jTextField5.setText(String.format("%.2f",num1*jpy));
+            jTextField6.setText(String.format("%.2f",num1*jpy/brl));
+        }
+        if (jComboBox1.getSelectedIndex()==4){//BRL
+            jTextField3.setText(String.format("%.2f",num1*brl/usd));
+            jTextField4.setText(String.format("%.2f",num1*brl/eur));
+            jTextField5.setText(String.format("%.2f",num1*brl/jpy));
+            jTextField6.setText(String.format("%.2f",num1*brl));
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -265,12 +421,21 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
