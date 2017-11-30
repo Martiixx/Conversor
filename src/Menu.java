@@ -15,6 +15,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        jTextField1.setText("0");
     }
 
     /**
@@ -39,8 +40,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setText("Conversor Divisas");
 
-        jTextField1.setText("jTextField1");
-
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CLP", "USD", "EUR", "JPY", "BRL" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,14 +47,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Convertir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jTextField2.setText("jTextField2");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CLP", "USD", "EUR", "JPY", "BRL" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,23 +75,24 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(197, 197, 197)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jButton1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addComponent(jButton1))
-                            .addComponent(jLabel2))
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(56, 56, 56)
+                                .addComponent(jLabel3))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +122,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         float num1, usd = 645.16f , eur=765.122f , jpy=5.748f , brl=197.66f ;
-        
+        jTextField1.setText("0");
         /* index 0 = CLP
         * Index 1= USD
         * Index 2 = EUR
@@ -149,8 +147,79 @@ public class Menu extends javax.swing.JFrame {
                 num1=num1/brl;
             }
             }
-        
-        jTextField2.setText(String.valueOf(num1));
+        if (jComboBox1.getSelectedIndex()==1){//Segundo index USD seleccionado
+            if (jComboBox2.getSelectedIndex()==0){//If USD a CLP
+                jTextField2.setText(String.valueOf(num1));
+                num1=num1*usd;
+            }
+            if (jComboBox2.getSelectedIndex()==1){//Index a USD
+                num1=num1;
+            }
+            if (jComboBox2.getSelectedIndex()==2){//Index a EUR
+                num1=num1*usd/eur;
+            }
+            if (jComboBox2.getSelectedIndex()==3){//Index a JPY
+                num1=num1*usd/jpy;
+            }
+            if (jComboBox2.getSelectedIndex()==4){//Index a BRL
+                num1=num1*usd/brl;
+            }
+            }
+        if (jComboBox1.getSelectedIndex()==2){//Tercer index EUR seleccionado
+            if (jComboBox2.getSelectedIndex()==0){//If EUR a CLP
+                jTextField2.setText(String.valueOf(num1));
+                num1=num1*eur;
+            }
+            if (jComboBox2.getSelectedIndex()==1){//Index a USD
+                num1=num1*eur/usd;
+            }
+            if (jComboBox2.getSelectedIndex()==2){//Index a EUR
+                num1=num1;
+            }
+            if (jComboBox2.getSelectedIndex()==3){//Index a JPY
+                num1=num1*eur/jpy;
+            }
+            if (jComboBox2.getSelectedIndex()==4){//Index a BRL
+                num1=num1*eur/brl;
+            }
+            }
+        if (jComboBox1.getSelectedIndex()==3){//Cuerto index JPY seleccionado
+            if (jComboBox2.getSelectedIndex()==0){//If JPY a CLP
+                jTextField2.setText(String.valueOf(num1));
+                num1=num1*jpy;
+            }
+            if (jComboBox2.getSelectedIndex()==1){//Index a USD
+                num1=num1*jpy/usd;
+            }
+            if (jComboBox2.getSelectedIndex()==2){//Index a EUR
+                num1=num1*jpy/eur;
+            }
+            if (jComboBox2.getSelectedIndex()==3){//Index a JPY
+                num1=num1;
+            }
+            if (jComboBox2.getSelectedIndex()==4){//Index a BRL
+                num1=num1*jpy/brl;
+            }
+            }
+        if (jComboBox1.getSelectedIndex()==3){//Cuerto index BRL seleccionado
+            if (jComboBox2.getSelectedIndex()==0){//If BRL a CLP
+                jTextField2.setText(String.valueOf(num1));
+                num1=num1*brl;
+            }
+            if (jComboBox2.getSelectedIndex()==1){//Index a USD
+                num1=num1*brl/usd;
+            }
+            if (jComboBox2.getSelectedIndex()==2){//Index a EUR
+                num1=num1*brl/eur;
+            }
+            if (jComboBox2.getSelectedIndex()==3){//Index a JPY
+                num1=num1*brl/jpy;
+            }
+            if (jComboBox2.getSelectedIndex()==4){//Index a BRL
+                num1=num1;
+            }
+            }
+        jTextField2.setText(String.format("%.2f", num1-0.005));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
